@@ -1,8 +1,9 @@
+import Main from './main/page.js';
 
 export default function Home() {
   return (
     <>
-      HelloWorld
+      <Main></Main>
     </>
   );
 }
