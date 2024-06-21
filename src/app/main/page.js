@@ -148,8 +148,8 @@ export default function Main() {
     setExcelList([[...columns]]);
     //追加元素
     if (tableList.length > 0) {
-      const valuesArray = tableList.map(item => Object.values(item));
-      setExcelList(item => [...item, ...valuesArray]);
+      const valuesArray = tableList.map((item) => Object.values(item));
+      setExcelList((item) => [...item, ...valuesArray]);
     }
   }, [tableList]);
 
@@ -178,7 +178,12 @@ export default function Main() {
     // 将工作表添加到工作簿
     XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
     // 导出为Excel文件
-    XLSX.writeFile(workbook, `报销报表-${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}.xlsx`);
+    XLSX.writeFile(
+      workbook,
+      `报销报表-${today.getFullYear()}-${
+        today.getMonth() + 1
+      }-${today.getDate()}.xlsx`
+    );
   };
 
   //表单验证成功回调
@@ -455,11 +460,7 @@ export default function Main() {
               },
             ]}
           >
-            <InputNumber
-              style={{ width: "100%" }}
-              changeOnWheel
-              prefix="￥"
-            />
+            <InputNumber style={{ width: "100%" }} changeOnWheel prefix="￥" />
           </Form.Item>
 
           <ConfigProvider locale={locale}>
@@ -513,6 +514,11 @@ export default function Main() {
             </Button>
           </Space>
         </div>
+        <footer className="text-black py-4 fixed bottom-0 w-full">
+          <div className="container mx-auto text-center">
+            <p>made by mr.liao</p>
+          </div>
+        </footer>
       </div>
     </>
   );
