@@ -494,6 +494,7 @@ export default function Main() {
             <Button
               type="primary"
               icon={<DownloadOutlined />}
+              className="right-20"
               onClick={download}
             >
               下载
