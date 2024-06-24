@@ -130,6 +130,10 @@ export default function Main() {
   ];
 
   useEffect(() => {
+    console.log("component init")
+  })
+
+  useEffect(() => {
     const columns = [
       "ID",
       "项目医院",
@@ -514,7 +518,7 @@ export default function Main() {
             </Button>
           </Space>
         </div>
-        <footer className="text-black py-4 fixed bottom-0 w-full">
+        <footer className="text-black py-4 fixed bottom-0 w-full bg-gray-300">
           <div className="container mx-auto text-center">
             <p>made by mr.liao</p>
           </div>
